@@ -63,7 +63,8 @@ Not used by any firmware in this repo, but for reference the backpack taps:
 | DIO0 / IRQ | 16 |
 | RESET | 4 |
 
-The backpack deliberately uses GPIO 6/7/8/9 (unrouted on the base board) so the buttons
+The backpack plugs into the inner-female headers for these (IO6/7/8/9 on the Bottom row,
+IO16/04 on the Expansion row). It deliberately avoids the button/OLED pins, so the buttons
 stay live while LoRa runs.
 
 ## GPIO for your own projects
