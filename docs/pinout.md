@@ -25,16 +25,30 @@ cat-shaped Nugget PCB. This is the GPIO map the firmware in this repo uses.
 
 > All six face buttons read `LOW` when pressed. Use `pinMode(pin, INPUT_PULLUP)`.
 
-## Connectors
+## Header pins
+
+Each pin-header edge has **two rows**: an **inner female** row that carries the S3 Mini's own
+pins (mirrored from the LOLIN S3 Mini pinout) and an **outer male** row. The **inner female**
+rows are the accessible ones — they're what the backpack add-ons tap — so those are the ones
+to wire to. The outer male rows aren't easily accessible and aren't used by add-ons.
+
+| Inner-female header | Pins, in order |
+|---|---|
+| **Top** | IO33 · IO37 · IO38 · IO34 · IO21 · IO17 · GND · IO15 |
+| **Bottom** | IO01 · IO03 · IO05 · IO06 · IO07 · IO08 · IO09 · IO14 |
+| **Expansion (left edge)** | 5V · IO10 · GND · 3.3V · GND · IO16 · IO04 · IO02 |
+
+The RFM95 LoRa backpack taps **IO6/7/8/9** on the Bottom row and **IO16/04** on the Expansion
+row. See [BluetoothNugget.png](../images/BluetoothNugget.png) above for the visual layout.
+
+## Other connectors
 
 | Connector | Pins |
 |---|---|
 | **J2 — QWIIC / I²C** | SCL = GPIO36 · SDA = GPIO35 · 3.3V · GND (same bus as the OLED) |
 | **J4 — external NeoPixel** | 5V · **NPXL = GPIO10** · GND (level-shifted 5V data for an off-board strip) |
 | **J8 — SAO v2** | GND · 3.3V · SDA(GPIO35) · SCL(GPIO36) · GPIO04 · GPIO02 |
-| **Left header** | 5V · NPXL(GPIO10) · GND · 3.3V · GND · GPIO16 · GPIO04 · GPIO02 |
-| **Top header** | GPIO43 · GPIO44 · GPIO36 · GPIO35 · GPIO18 · GPIO16 · GND · 5V |
-| **Solder pads** (both ears) | 3.3V · LED OUT (GPIO10 chain) · GND |
+| **LED-out pads** (both ears) | 3.3V · LED OUT (GPIO10 chain) · GND |
 
 ## Optional RFM95 LoRa backpack
 
@@ -52,10 +66,12 @@ Not used by any firmware in this repo, but for reference the backpack taps:
 The backpack deliberately uses GPIO 6/7/8/9 (unrouted on the base board) so the buttons
 stay live while LoRa runs.
 
-## Free GPIO (no backpack fitted)
+## GPIO for your own projects
 
-**GPIO 6, 7, 8, 9, 16, 4, 2** are free for your own projects. Taken: 10 (NeoPixel),
-11/12/13/18/43/44 (buttons), 35/36 (I²C/OLED).
+Broken out on the inner-female headers: **IO 1, 3, 5, 6, 7, 8, 9, 14, 15, 17, 21, 33, 34, 37,
+38** (Top/Bottom rows) plus **IO16, IO04, IO02** and **IO10** (NeoPixel-out) on the Expansion
+row. Used internally and **not** on the user headers: **11/12/13/18/43/44** (buttons) and
+**35/36** (I²C/OLED). IO 6/7/8/9/16/4 double as the LoRa backpack bus.
 
 ## Build target
 
