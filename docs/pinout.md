@@ -3,6 +3,12 @@
 The Bluetooth Nugget is a **LOLIN/Wemos S3 Mini** (ESP32-S3FH4R2) socketed onto the
 cat-shaped Nugget PCB. This is the GPIO map the firmware in this repo uses.
 
+![Header pinout — Nugget with S3 Mini](../images/BluetoothNugget.png)
+
+> The tables below are the **firmware-validated** pins for the on-board OLED, buttons, and
+> NeoPixel (confirmed working on hardware). The diagram above is the expansion / top / bottom
+> **header** breakout reference.
+
 ## On-board peripherals
 
 | Peripheral | Part | GPIO | Notes |
