@@ -45,7 +45,7 @@ esptool --chip esp32s3 --port <PORT> write-flash 0x0 firmware/<name>.factory.bin
 |---|---|---|---|
 | **OUI-SPY** | 4-in-1 **passive surveillance detector** — Flock Safety ALPR + ShotSpotter/Raven, drone Remote-ID, a BLE device watchlist, and an RSSI **foxhunt** — pick a mode on the screen or over Wi-Fi | ✅ OLED | Button menu + web |
 | **WiFi Analyzer** | **Passive Wi-Fi survey + device hunter** — browse nearby networks, then pick one for a live RSSI meter (with the ears blinking blue→red-hot) to walk it down | ✅ OLED | Buttons |
-| **WLED** | The popular **addressable-LED art** controller — drives the onboard RGB + external strips, status on the OLED | ✅ OLED | Buttons + web |
+| **WLEDkitty** | WLED for Retia devices — drives the onboard RGB ears + external strips, **boots into a Pride rainbow**, live status on the OLED, on-device brightness/color control | ✅ OLED | Buttons + web |
 | **Retro Arcade** | **8 retro games** — Snake, Tetris, Breakout, Pac-Man, Flappy, 2048, Frogger, Helicopter | ✅ OLED | d-pad + A/B |
 | **AirTag Scanner** | **Passive AirTag / Find-My** unwanted-tracker detector — live count + last tag on the OLED, full log over serial | ✅ OLED | — |
 | **ESP32 Marauder** | The **ESP32 Marauder** Wi-Fi/Bluetooth analysis + testing suite — runs headless, driven over USB serial | serial | serial CLI |
@@ -75,7 +75,7 @@ own firmware.
 firmware/                       6 flashable factory images (merged, flash at 0x0)
   oui-spy.factory.bin           OUI-SPY 4-in-1 passive detector (OLED + buttons)
   wifi-analyzer.factory.bin     Wi-Fi survey + foxhunt device hunter (OLED + NeoPixel ears)
-  wled.factory.bin              WLED LED-art controller (OLED + buttons)
+  wled.factory.bin              WLEDkitty — WLED for Retia, Pride rainbow (OLED + buttons)
   retro-arcade.factory.bin      8-game arcade (OLED + d-pad/A/B)
   airtag-scanner.factory.bin    Passive AirTag / Find-My detector (OLED)
   marauder.factory.bin          ESP32 Marauder Wi-Fi/BT suite (headless/serial)
